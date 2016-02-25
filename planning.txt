@@ -1,34 +1,83 @@
-5 websites/apps where Pulsd events can be reposted:
-----------------------------------------------------
-1. timeout ny  http://www.timeout.com/newyork/get-listed     email
-2. nifty nyc   http://www.niftynyc.com/submit-event/ one page form
-3. the skint   http://www.theskint.com/contact/ very simple form
-4. eventbrite  https://www.eventbrite.com/developer/v3/endpoints/events/ api
-5. madeinnyc   http://madeinnyc.org/submit-your-event/ one page form
-
-Timeout NY
+1. Timeout NY
 Submission Details:
 - Email to editor of relevant section:Art, Books, Comedy, Dance, Film, Food & Drink, Gay & Lesbian, Kids, Music: Classical & Opera, Music: Cabaret & standards, Music: Rock, pop, soul, blues, folk, country, jazz, experimental, reggae, world and Latin, Nightlife, Sex & Dating, Shopping, Theater, This Week in New York
 - Must be submitted 10 days prior to event
 - Required Fields: venue address, event date, event time, price, telephone numbers, website, list of artists, performers, your contact information
 
-Nifty NYC
+2. Nifty NYC
 Submission Details:
 - One page form
 - Should be submitted between 3 and 90 days before event
 - Required Fields: Event name, date, time, location, cost (must be under $20), description, contact name, contact email, interested in advertising with Nifty NYC? (set to false)
 - Optional Fields: eticketing or informational site URL (link to pulsd site posting)
 
-The Skint
+3. The Skint
 Submission Details:
 - Minimalist form, only four fields
 - Required Fields: contact name, contact email, subject (event title), message.
 - The message should include price, location, date, time, and url link to pulsd posting.
 
-Eventbrite
+4. Eventbrite
 Submission Details:
 - Eventbrite API
-- Required Fields: 
+- Required Fields for Event: event.name.html (string), event.description.html (string), event.start.utc (datetime), event.start.timezone (string), event.end.utc (datetime), event.end.timezone (string), event.currency (string)
+- Required Fields for Ticket Classes: ticket_class.name (string), ticket_class.quantity_total (integer), ticket_class.cost (currency)
 
-Made in NYC
+5. Made in NYC
 Submission Details:
+- one page form
+- Required Fields for Event: event name, start day, end day, start time, end time, event description, venue name, venue address, admin email, admin name
+- Optional Fields for Event 
+
+
+
+
+
+Models
+-------
+
+
+Event - belongs_to admin, has_one event_time
+-----------
+event name
+event description
+venue name
+venue address
+venue phone number
+price
+url
+event category
+admin_id
+
+
+EventTime - belongs_to event
+-----------
+start day
+end day
+start time
+end time
+
+Admin - has_many events
+-----------
+admin email
+admin name
+
+
+
+
+
+
+Adapters
+---------
+
+eventbrite
+
+timeout_ny
+
+nifty_nyc
+
+the_skint
+
+madeinnyc
+
+syndicate

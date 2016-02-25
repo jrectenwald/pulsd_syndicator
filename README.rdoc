@@ -1,28 +1,10 @@
-== README
+Pulsd Code Challenge
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Event Websites
+-----------------
+timeout ny  http://www.timeout.com/newyork/get-listed     email
+nifty nyc   http://www.niftynyc.com/submit-event/ one page form
+the skint     http://www.theskint.com/contact/ very simple form
+eventbrite  https://www.eventbrite.com/developer/v3/endpoints/events/ api
+madeinnyc   http://madeinnyc.org/submit-your-event/ one page form
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
