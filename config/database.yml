@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: pulsd_syndicator_production
-  username: pulsd_syndicator
+  username: jim
   password: <%= ENV['PULSD_SYNDICATOR_DATABASE_PASSWORD'] %>

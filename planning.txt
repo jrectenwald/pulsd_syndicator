@@ -37,18 +37,24 @@ Models
 -------
 
 
-Event - belongs_to admin, has_one event_time
+Event - belongs_to admin, has_one event_time, has_one venue 
 -----------
 event name
 event description
-venue name
-venue address
-venue phone number
 price
 url
 event category
 admin_id
 
+Venue belongs_to event
+-----------
+venue name
+street
+city
+state
+zip_code
+venue phone number
+event_id
 
 EventTime - belongs_to event
 -----------
@@ -56,6 +62,7 @@ start day
 end day
 start time
 end time
+event_id
 
 Admin - has_many events
 -----------
