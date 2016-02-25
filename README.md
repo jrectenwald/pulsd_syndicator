@@ -1,0 +1,1 @@
+Syndicator: Pulsd Software Developer Code Challenge Project
