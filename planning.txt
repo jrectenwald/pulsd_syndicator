@@ -1,0 +1,10 @@
+5 websites/apps where Pulsd events can be reposted:
+----------------------------------------------------
+1. timeout ny http://www.timeout.com/newyork/get-listed     email
+2. nifty nyc   http://www.niftynyc.com/submit-event/ one page form
+3. the skint     http://www.theskint.com/contact/ very simple form
+4. eventbrite  https://www.eventbrite.com/developer/v3/endpoints/events/ api
+5. madeinnyc   http://madeinnyc.org/submit-your-event/ one page form
+
+Timeout NY
+Submission Details
