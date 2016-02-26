@@ -24,24 +24,23 @@ ActiveRecord::Schema.define(version: 20160225224244) do
   end
 
   create_table "event_times", force: :cascade do |t|
-    t.date     "start_day"
-    t.time     "start_time"
-    t.date     "end_day"
-    t.time     "end_date"
+    t.date     "start_datetime"
+    t.date     "end_datetime"
     t.integer  "event_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
-    t.integer  "price"
+    t.integer  "ticket_price"
+    t.integer  "ticket_quantity"
     t.string   "url"
     t.string   "category"
     t.integer  "admin_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "venues", force: :cascade do |t|
