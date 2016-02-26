@@ -26,7 +26,7 @@ module Adapters
       url += "?token=#{ENV['EVENTBRITE_OAUTH_TOKEN']}"
       url += "&ticket_class.name=paid"
       url += "&ticket_class.quantity_total=#{@event.ticket_quantity}"
-      url += "&ticket_class.cost=USD,#{@event.ticket_cost}"
+      url += "&ticket_class.cost=USD,#{@event.ticket_price}"
       HTTParty.post(url)
     end
 
