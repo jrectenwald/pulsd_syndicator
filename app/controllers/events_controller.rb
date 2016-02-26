@@ -14,7 +14,10 @@ class EventsController < ApplicationController
 
   # GET /events/new
   def new
+    @events = Event.all
+    @not_syndicated = @events.where(syndicated: false)
     @event = Event.new
+    @categories = Adapters::TimeoutNY.emails
   end
 
   # GET /events/1/edit
@@ -29,7 +32,7 @@ class EventsController < ApplicationController
     @event.admin = admin
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        format.html { redirect_to action: 'new' }
         format.json { render :show, status: :created, location: @event }
       else
         format.html { render :new }

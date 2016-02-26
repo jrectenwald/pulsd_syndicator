@@ -3,3 +3,10 @@
     <%= render 'form' %>
 </div>
 <%= link_to 'Back', events_path %>
+<div class="row">
+  <div class="col-xs-2"></div>
+  <div class="col-xs-8">
+    <%= render partial: 'events_table', locals: {events: @not_syndicated} %>
+  </div>
+  <div class="col-xs-2"></div>
+</div>

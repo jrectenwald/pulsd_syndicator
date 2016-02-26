@@ -1,0 +1,33 @@
+<% if events.length > 0 %>
+  <h3>Events not yet Syndicated</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Url</th>
+        <th>Category</th>
+        <th colspan="5"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% events.each do |event| %>
+        <tr>
+          <td><%= event.name %></td>
+          <td><%= event.description[0..6] + "..." %></td>
+          <td><%= event.ticket_price %></td>
+          <td><%= event.url %></td>
+          <td><%= event.category %></td>
+          <td><%= link_to 'Show', event %></td>
+          <td><%= link_to 'Edit', edit_event_path(event) %></td>
+          <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+<% end %>

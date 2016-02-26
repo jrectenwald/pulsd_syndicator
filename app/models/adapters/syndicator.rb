@@ -6,6 +6,7 @@ module Adapters
       events.each do |event|
         syndicate(event)
         event.syndicated = true
+        event.save
       end
     end
 

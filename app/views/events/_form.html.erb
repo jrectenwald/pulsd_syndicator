@@ -36,7 +36,11 @@
       </div>
       <div class="field">
         <%= f.label :category %><br>
-        <%= f.text_field :category %>
+        <%= f.select(:category) do %>
+          <% @categories.each do |category| -%>
+            <%= content_tag(:option, category[0].to_s.split("_").join(" "), value: category[0]) %>
+          <% end %>
+        <% end %>
       </div>
     </div>
     <div class="col-xs-3">
