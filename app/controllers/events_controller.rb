@@ -29,7 +29,6 @@ class EventsController < ApplicationController
     @event.admin = admin
     respond_to do |format|
       if @event.save
-        Adapters::Syndicator.new.update_events
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
         format.json { render :show, status: :created, location: @event }
       else

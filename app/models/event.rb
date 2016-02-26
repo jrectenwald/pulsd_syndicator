@@ -6,7 +6,23 @@ class Event < ActiveRecord::Base
   accepts_nested_attributes_for :event_time, :venue
 
   def address
-    @street
+    "#{self.venue.name}\n#{self.venue.street}\n#{self.venue.city}, #{self.venue.state} #{self.venue.zip_code}"
+  end
+
+  def date_start
+    self.event_time.start.strftime("%m/%d/%Y") 
+  end
+
+  def time_start
+    self.event_time.start.strftime("%I:%M%p") 
+  end
+
+  def date_end
+    self.event_time.start.strftime("%m/%d/%Y") 
+  end
+
+  def time_end
+    self.event_time.start.strftime("%I:%M%p") 
   end
 
 end
