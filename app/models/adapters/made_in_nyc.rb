@@ -21,7 +21,7 @@ module Adapters
       form.event_phone = @event.venue.phone_number
       form.user_email = @event.admin.email
       form.user_name = @event.admin.name
-      #@agent.submit(form)
+      @agent.submit(form)
     end
 
   end

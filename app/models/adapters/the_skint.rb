@@ -13,7 +13,7 @@ module Adapters
       form["your-email"] = @event.admin.email
       form["your-subject"] = @event.name
       form["your-message"] = @event.event_time.end
-      #@agent.submit(form)
+      @agent.submit(form)
     end
 
   end
