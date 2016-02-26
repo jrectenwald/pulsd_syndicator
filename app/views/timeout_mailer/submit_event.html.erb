@@ -1,0 +1,28 @@
+<h1><%= @event.name %></h1>
+<p>
+  Venue Address: <%= @event.address %>
+</p>
+<p>
+  Start Date/Time: <%= @event.event_time.start %>
+</p>
+<p>
+  Finish Date/Time: <%= @event.event_time.end %>
+</p>
+<p>
+  Price: <%= @event.ticket_price %>
+</p>
+<p>
+  Phone Number: <%= @event.venue.phone_number %>
+</p>
+<p>
+  Website: <%= @event.url %>
+</p>
+<p>
+  Description: <%= @event.description %>
+</p>
+<p>
+  Contact Name: <%= @event.admin.name %>
+</p>
+<p>
+  Contact Email: <%= @event.admin.email %>
+</p>

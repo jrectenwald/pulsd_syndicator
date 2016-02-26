@@ -6,7 +6,7 @@ module Adapters
       @agent = Mechanize.new
     end
 
-    def submit_form
+    def submit_event
       page = agent.get('http://www.theskint.com/contact/')
       form = page.form_with(:class => 'wpcf7-form')
       form.your-name = @event.admin.name

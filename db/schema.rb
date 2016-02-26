@@ -24,11 +24,11 @@ ActiveRecord::Schema.define(version: 20160225224244) do
   end
 
   create_table "event_times", force: :cascade do |t|
-    t.date     "start_datetime"
-    t.date     "end_datetime"
+    t.date     "start"
+    t.date     "end"
     t.integer  "event_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "events", force: :cascade do |t|

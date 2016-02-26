@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-
+  <h3>Event</h3>
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
@@ -20,8 +20,12 @@
     <%= f.text_field :description %>
   </div>
   <div class="field">
-    <%= f.label :price %><br>
-    <%= f.number_field :price %>
+    <%= f.label :ticket_price %><br>
+    <%= f.number_field :ticket_price %>
+  </div>
+  <div class="field">
+    <%= f.label :ticket_quantity %><br>
+    <%= f.number_field :ticket_quantity %>
   </div>
   <div class="field">
     <%= f.label :url %><br>
@@ -31,10 +35,43 @@
     <%= f.label :category %><br>
     <%= f.text_field :category %>
   </div>
-  <div class="field">
-    <%= f.label :admin_id %><br>
-    <%= f.number_field :admin_id %>
-  </div>
+  <%= f.fields_for :event_time do |event_time_form| %>
+    <div class="field">
+      <%= event_time_form.label :start %>
+      <%= event_time_form.datetime_select :start, :ampm => true, :minute_step => 15 %>
+    </div>
+    <div class="field">
+      <%= event_time_form.label :end %>
+      <%= event_time_form.datetime_select :end, :ampm => true, :minute_step => 15 %>
+    </div>
+  <% end %>
+  <h3>Venue</h3>
+  <%= f.fields_for :venue do |venue_form| %>
+    <div class="field">
+      <%= venue_form.label :name %><br>
+      <%= venue_form.text_field :name %>
+    </div>
+    <div class="field">
+      <%= venue_form.label :street %><br>
+      <%= venue_form.text_field :street %>
+    </div>
+    <div class="field">
+      <%= venue_form.label :city %><br>
+      <%= venue_form.text_field :city %>
+    </div>
+    <div class="field">
+      <%= venue_form.label :state %><br>
+      <%= venue_form.text_field :state %>
+    </div>
+    <div class="field">
+      <%= venue_form.label :zip_code %><br>
+      <%= venue_form.text_field :zip_code %>
+    </div>
+    <div class="field">
+      <%= venue_form.label :phone_number %><br>
+      <%= venue_form.text_field :phone_number %>
+    </div>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>
