@@ -8,6 +8,7 @@ class CreateEvents < ActiveRecord::Migration
       t.string :url
       t.string :category
       t.integer :admin_id
+      t.boolean :syndicated, :default => false
 
       t.timestamps null: false
     end

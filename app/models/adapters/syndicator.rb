@@ -1,16 +1,16 @@
 module Adapters
   class Syndicator
 
-    def self.update_events
-
+    def update_events
+      events = Event.where(syndicated: false)
+      events.each do |event|
+        syndicate(event)
+        event.syndicated = true
+      end
     end
 
-    def initialize(event)
-
-    end
-
-    def syndicate
-      
+    def syndicate(event)
+      Adapters::TimeoutNY.new(event).submit_event
     end
 
   end

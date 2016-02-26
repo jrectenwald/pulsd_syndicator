@@ -24,10 +24,12 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
+    admin = Admin.find(1)
     @event = Event.new(event_params)
-    binding.pry
+    @event.admin = admin
     respond_to do |format|
       if @event.save
+        Adapters::Syndicator.new.update_events
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
         format.json { render :show, status: :created, location: @event }
       else

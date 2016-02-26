@@ -39,8 +39,9 @@ ActiveRecord::Schema.define(version: 20160225224244) do
     t.string   "url"
     t.string   "category"
     t.integer  "admin_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.boolean  "syndicated",      default: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   create_table "venues", force: :cascade do |t|

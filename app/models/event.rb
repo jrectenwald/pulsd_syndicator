@@ -5,4 +5,8 @@ class Event < ActiveRecord::Base
 
   accepts_nested_attributes_for :event_time, :venue
 
+  def address
+    @street
+  end
+
 end
