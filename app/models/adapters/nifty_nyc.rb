@@ -18,6 +18,7 @@ module Adapters
       form.ninja_forms_field_18 = @event.admin.name
       form.ninja_forms_field_19 = @event.admin.email
       form.ninja_forms_field_21 = "No thanks."
+      agent.submit(form)
     end
 
   end
