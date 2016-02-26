@@ -6,7 +6,7 @@ module Adapters
       @agent = Mechanize.new
     end
 
-    def submit_form
+    def submit_event
       page = agent.get('http://www.niftynyc.com/submit-event/')
       form = page.form_with(:id => 'ninja_forms_form_2')
       form.ninja_forms_field_6 = @event.name

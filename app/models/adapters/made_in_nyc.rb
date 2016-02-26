@@ -6,7 +6,7 @@ module Adapters
       @agent = Mechanize.new
     end
 
-    def submit_form
+    def submit_event
       page = agent.get('http://madeinnyc.org/submit-your-event/')
       form = page.form_with(:id => 'event-o-matic')
       form.event_name = @event.name

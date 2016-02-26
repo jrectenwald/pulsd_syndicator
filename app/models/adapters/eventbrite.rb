@@ -8,7 +8,7 @@ module Adapters
       @venue = event.venue
     end
 
-    def create_event
+    def submit_event
       url = "https://www.eventbriteapi.com/v3/events/"
       url += "?token=#{ENV['EVENTBRITE_OAUTH_TOKEN']}"
       url += "&event.name.html=#{@event.name}"
