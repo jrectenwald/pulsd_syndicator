@@ -1,7 +1,6 @@
-Pulsd Code Challenge
+###Pulsd Code Challenge
 
-Event Websites
------------------
+####Event Websites
 1. [timeout ny](http://www.timeout.com/newyork/get-listed)
 2. [nifty nyc](http://www.niftynyc.com/submit-event/)
 3. [the skint](http://www.theskint.com/contact/)
