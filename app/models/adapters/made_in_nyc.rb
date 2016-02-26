@@ -3,6 +3,7 @@ module Adapters
 
     def initialize(event)
       @event = event
+      @agent = Mechanize.new
     end
 
     def submit_form
@@ -20,6 +21,7 @@ module Adapters
       form.event_phone = @event.venue.phone_number
       form.user_email = @event.admin.email
       form.user_name = @event.admin.name
+      agent.submit(form)
     end
 
   end
