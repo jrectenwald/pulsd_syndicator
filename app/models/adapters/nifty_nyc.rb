@@ -7,20 +7,17 @@ module Adapters
     end
 
     def submit_form
-      page = agent.get('http://madeinnyc.org/submit-your-event/')
-      form = page.form_with(:id => 'event-o-matic')
-      form.event_name = @event.name
-      form.date_start = @event.date_start
-      form.time_start = @event.time_start
-      form.date_end = @event.date_end
-      form.time_end = @event.time_end
-      form.event_description = @event.description
-      form.venue_name = @event.venue.name
-      form.venue_address = @event.venue.address
-      form.event_url = @event.url
-      form.event_phone = @event.venue.phone_number
-      form.user_email = @event.admin.email
-      form.user_name = @event.admin.name
+      page = agent.get('http://www.niftynyc.com/submit-event/')
+      form = page.form_with(:id => 'ninja_forms_form_2')
+      form.ninja_forms_field_6 = @event.name
+      form.ninja_forms_field_8 = @event.date_start
+      form.ninja_forms_field_11 = @event.time_start
+      form.ninja_forms_field_9 = @event.venue.address
+      form.ninja_forms_field_12 = @event.ticket_price
+      form.ninja_forms_field_17 = @event.description
+      form.ninja_forms_field_18 = @event.admin.name
+      form.ninja_forms_field_19 = @event.admin.email
+      form.ninja_forms_field_21 = "No thanks."
     end
 
   end
